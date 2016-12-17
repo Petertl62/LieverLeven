@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'haiku_app'
+    'haiku_app',
+    'evenementen_app',
 ]
 
 MIDDLEWARE = [
