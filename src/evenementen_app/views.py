@@ -28,7 +28,7 @@ def detailed(request, title_obj):
 def inschrijven(request, title_obj):
     evenement = Evenement.objects.get(url_title=title_obj)
 
-    if request.POST:
+    if request.method == 'POST':
         form = ModelInschijfForm(request.POST)
         if form.is_valid():
             inschrijving = form.save(commit=False)
