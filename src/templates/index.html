@@ -1,0 +1,9 @@
+{% if haiku_qs %}
+  {% for haiku in haiku_qs %}
+    <p>{{ haiku.line_one }}</p>
+    <p>{{ haiku.line_two }}</p>
+    <p>{{ haiku.line_three }}</p>
+  {% endfor %}
+{% else %}
+  <p>er zijn nog geen haiku's<p>
+{% endif %}
