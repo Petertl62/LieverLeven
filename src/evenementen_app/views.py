@@ -4,7 +4,7 @@ from django.template import RequestContext
 from django.db.models import Q
 
 from .models import Evenement
-from .forms import ModelInschijfForm
+from .forms import ModelInschrijfForm
 
 
 def index(request):
@@ -29,18 +29,18 @@ def inschrijven(request, title_obj):
     evenement = Evenement.objects.get(url_title=title_obj)
 
     if request.method == 'POST':
-        form = ModelInschijfForm(request.POST)
+        form = ModelInschrijfForm(request.POST)
         if form.is_valid():
             inschrijving = form.save(commit=False)
             inschrijving.evenement = evenement
             inschrijving.save()
             return redirect('/evenementen/%s/' %(evenement.url_title))
     else:
-        form = ModelInschijfForm()
+        form = ModelInschrijfForm()
 
     context = {
         'evenement': evenement,
         'form': form,
     }
 
-    return render(request, 'evenement_inschrijven.html')
+    return render(request, 'evenement_inschrijven.html', context)

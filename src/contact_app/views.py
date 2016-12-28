@@ -17,4 +17,4 @@ def contact(request):
         'form': form,
     }
 
-    return render(request, "contact.index", context)
+    return render(request, "contact.html", context)

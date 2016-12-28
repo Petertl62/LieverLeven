@@ -6,7 +6,7 @@ class Haiku(models.Model):
 
     title = models.CharField(max_length=256)
     url_title = models.CharField(max_length=32, default='hello')
-    image = models.ImageField(upload_to="/media/haiku/", blank=True)
+    image = models.ImageField(upload_to="img", blank=True)
 
     line_one = models.CharField(max_length=64)
     line_two = models.CharField(max_length=64)

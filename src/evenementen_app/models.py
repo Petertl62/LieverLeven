@@ -6,7 +6,7 @@ class Evenement(models.Model):
 
     title = models.CharField(max_length=256)
     url_title = models.CharField(max_length=256, default='title', unique=True)
-    image = models.ImageField(upload_to='/media/evenement/', blank=True)
+    image = models.ImageField(upload_to='img', blank=True)
 
     tijdstip = models.DateTimeField()
     text = models.TextField()
